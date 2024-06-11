@@ -1,6 +1,6 @@
 # Link Manager
 
-A simple web application that allows you to save links with titles and descriptions, and manage them in a table view. Built with HTML, CSS, Bootstrap, and JavaScript.
+A simple web application allows you to save links with titles and descriptions and manage them in a table view. Built with Bootstrap and JavaScript.
 
 ## Features
 
@@ -15,7 +15,7 @@ A simple web application that allows you to save links with titles and descripti
 1. Enter a link (or LeetCode problem ID) in the "Enter Link or Enter the ID" input field.
 2. Enter a title and description for the link.
 3. Click the "Save Link" button to add the link to the table.
-4. Click the "Remove" button in the corresponding table row to remove a link.
+4. Click the "Remove" button to remove a link in the corresponding table row.
 
 ## Access
 Visit the website: [Link Manager](https://link-manager-farneet.netlify.app/)
