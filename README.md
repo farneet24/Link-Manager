@@ -10,18 +10,20 @@ A simple web application that allows you to save links with titles and descripti
 - Links persist in the browser's local storage
 - Responsive design using Bootstrap
 
-## Installation
-
-1. Clone the repository or download the source code.
-2. Open the `index.html` file in a web browser.
-
 ## Usage
 
 1. Enter a link (or LeetCode problem ID) in the "Enter Link or Enter the ID" input field.
 2. Enter a title and description for the link.
 3. Click the "Save Link" button to add the link to the table.
-4. To remove a link, click the "Remove" button in the corresponding table row.
+4. Click the "Remove" button in the corresponding table row to remove a link.
+
+## Access
+Visit the website: [Link Manager](https://link-manager-farneet.netlify.app/)
+
+## Collaboration
+For collaboration inquiries, contact via [LinkedIn](https://www.linkedin.com/in/farneet-singh-6b155b208/).
 
 ## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This project is licensed under the [MIT License](LICENSE).
+Licensed under the MIT License.
