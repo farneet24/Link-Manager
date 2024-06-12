@@ -1,56 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="https://cdn-icons-png.freepik.com/512/8816/8816512.png">
-  <title>Link Manager</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    .website-icon {
-      width: 20px;
-      height: 20px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container mt-5">
-    <h1 class="text-center mb-4 my-4">Link Manager</h1>
-    <div class="row">
-      <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="linkInput">Enter Link or Enter the ID:</label>
-          <input type="text" class="form-control" id="linkInput" placeholder="Enter link or ID">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.freepik.com/512/8816/8816512.png"
+    />
+    <title>Link Manager</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      .website-icon {
+        width: 20px;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mt-5">
+      <h1 class="text-center mb-4 my-4">Link Manager</h1>
+      <div class="container-fluid row">
+        <div class="col-md-6 mx-auto">
+          <div class="form-group">
+            <label for="linkInput">Enter Link or Enter the ID:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="linkInput"
+              placeholder="Enter link or ID"
+            />
+          </div>
+          <div class="form-group">
+            <label for="titleInput">Enter Title:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="titleInput"
+              placeholder="Enter title"
+            />
+          </div>
+          <div class="form-group">
+            <label for="descriptionInput">Enter Description:</label>
+            <textarea
+              class="form-control"
+              id="descriptionInput"
+              rows="3"
+              placeholder="Enter description"
+            ></textarea>
+          </div>
+          <button class="btn btn-primary btn-block" id="saveBtn">
+            Save Link
+          </button>
         </div>
-        <div class="form-group">
-          <label for="titleInput">Enter Title:</label>
-          <input type="text" class="form-control" id="titleInput" placeholder="Enter title">
-        </div>
-        <div class="form-group">
-          <label for="descriptionInput">Enter Description:</label>
-          <textarea class="form-control" id="descriptionInput" rows="3" placeholder="Enter description"></textarea>
-        </div>
-        <button class="btn btn-primary btn-block" id="saveBtn">Save Link</button>
       </div>
-    </div>
-    <hr>
-    <div class="row">
-      <div class="col-md-10 mx-auto">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Description</th>
-              <th>Link</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody id="linkList"></tbody>
-        </table>
+      <br />
+      <div class="container col-md-6 order-md-2">
+        <div class="form-group">
+          <label for="tagInput">Select Tag:</label>
+          <select class="form-control" id="tagInput">
+            <option value="Programming">Programming</option>
+            <option value="Education">Education</option>
+          </select>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <script src="script.js"></script>
-</body>
+      <br />
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="searchInput">Search Links:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="searchInput"
+                placeholder="Search by title or description"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="container-fluid row">
+        <div class="col-md-10 mx-auto">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Tag</th>
+                <th>Link</th>
+                <th>Date Added</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="linkList"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="editModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="editModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">Edit Link</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="editTitleInput">Title</label>
+                <input type="text" class="form-control" id="editTitleInput" />
+              </div>
+              <div class="form-group">
+                <label for="editDescriptionInput">Description</label>
+                <textarea
+                  class="form-control"
+                  id="editDescriptionInput"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="editTagInput">Tag</label>
+                <select class="form-control" id="editTagInput">
+                  <option value="education">Education</option>
+                  <option value="programming">Programming</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary" id="saveEditBtn">
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Include Bootstrap JS (make sure it comes after jQuery) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
 </html>
