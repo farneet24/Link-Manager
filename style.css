@@ -28,6 +28,7 @@ body {
   height: 100vh; /* Full viewport height */
   margin: 0; /* Removes default margin provided by browsers */
   padding: 0; /* Removes default padding */
+  overflow-x: hidden;
 }
 .navbar,
 .modal-content,
