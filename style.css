@@ -1,0 +1,54 @@
+/* For Webkit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  height: 8px; /* Height of the scrollbar */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #2e2e2e; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners of the scrollbar thumb */
+}
+
+
+
+.website-icon {
+  width: 20px;
+  height: 20px;
+}
+body {
+  background-color: #121212;
+  color: #ffffff;
+  background-image: url("https://wallpaperaccess.com/full/487579.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.navbar,
+.modal-content,
+.table,
+.form-control {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+.table td,
+.table th {
+  max-width: 300px; /* Adjust the max width as needed */
+  word-wrap: break-word;
+}
+.btn-primary,
+.btn-secondary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+.form-control:focus {
+  background-color: #1f1f1f;
+  color: #ffffff;
+  border-color: #666666;
+}
+.form-control::placeholder {
+  color: #bdbdbd;
+}
