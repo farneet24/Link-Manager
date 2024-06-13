@@ -20,8 +20,14 @@ body {
   background-color: #121212;
   color: #ffffff;
   background-image: url("https://wallpaperaccess.com/full/487579.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-size: cover; /* Scale the background image to cover the element */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-attachment: fixed; /* Optional: makes the background fixed during scrolling */
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Removes default margin provided by browsers */
+  padding: 0; /* Removes default padding */
 }
 .navbar,
 .modal-content,
